@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="6dp"
+    android:paddingEnd="6dp">
+
+  <TextView
+      android:id="@+id/player_message_txv"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:background="@drawable/message_player_background"
+      android:elevation="5dp"
+      android:maxWidth="240dp"
+      android:padding="15dp"
+      android:textColor="@color/white"
+      android:textSize="16sp"
+      android:textStyle="bold"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      tools:text="C'est mon message" />
+
+  <TextView
+      android:id="@+id/player_message_time_txv"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginEnd="10dp"
+      android:text="13:45"
+      android:textSize="10sp"
+      android:textStyle="bold"
+      app:layout_constraintBottom_toBottomOf="@+id/player_message_txv"
+      app:layout_constraintRight_toLeftOf="@+id/player_message_txv" />
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,18 @@
+<resources>
+
+    <string name="app_name">EsgiKotlinRpgAndroid</string>
+
+
+    <string name="welcome_message">Salut à toi ! \nBienvenue à kotlinCity! \nQuel est ton nom voyageur?</string>
+
+    <string name="funny_name">En voilà un drôle de nom %s</string>
+    <string name="game_master">Game Master</string>
+    <string name="validate">Valider</string>
+    <string name="hint_edit_text_value">Ma réponse</string>
+    <string name="your_pseudo">Pseudo :</string>
+    <string name="funny_player_name">En voilà un drôle de nom %s</string>
+    <string name="come_for_quest">Tu viens ici pour la quête ?</string>
+    <string name="yes_or_no_choice">\'o\' --> Oui \n\'n\' --> Non</string>
+
+
+</resources>

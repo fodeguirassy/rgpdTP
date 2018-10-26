@@ -7,27 +7,27 @@
     tools:context=".module.game.GameActivity">
 
   <android.support.v7.widget.AppCompatTextView
-      android:id="@+id/game_life_point"
+      android:id="@+id/game_life_point_txv"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:drawablePadding="8dp"
       android:drawableStart="@drawable/ic_life"
       android:gravity="center_vertical"
       android:padding="10dp"
-      android:text="100pt"
+      tools:text="@string/player_life_point_hint"
       app:layout_constraintBottom_toBottomOf="@+id/game_view_separator"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent" />
 
   <android.support.v7.widget.AppCompatImageView
-      android:id="@+id/game_weapon"
+      android:id="@+id/game_weapon_imv"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:padding="10dp"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
-      tools:src="@drawable/ic_axe" />
+      tools:srcCompat="@drawable/ic_axe" />
 
   <android.support.v7.widget.AppCompatImageView
       android:id="@+id/game_map"
@@ -57,8 +57,9 @@
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toBottomOf="@+id/game_view_separator"
-      tools:itemCount="3"
-      tools:listitem="@layout/item_game_master_message" />
+      tools:itemCount="2"
+      tools:listitem="@layout/item_game_master_message"
+  />
 
   <EditText
       android:id="@+id/game_profile_edt"
@@ -72,12 +73,12 @@
       android:inputType="textPersonName"
       android:paddingTop="16dp"
       android:textSize="16sp"
-      app:layout_constraintBottom_toTopOf="@+id/game_button"
+      app:layout_constraintBottom_toTopOf="@+id/game_validate_btn"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent" />
 
   <Button
-      android:id="@+id/game_button"
+      android:id="@+id/game_validate_btn"
       android:layout_width="0dp"
       android:layout_height="wrap_content"
       android:layout_marginBottom="8dp"

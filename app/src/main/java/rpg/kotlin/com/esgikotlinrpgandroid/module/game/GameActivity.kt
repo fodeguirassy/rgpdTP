@@ -10,7 +10,6 @@ import module.GameInterface
 import module.GamePresenter
 import rpg.kotlin.com.esgikotlinrpgandroid.R
 import rpg.kotlin.com.esgikotlinrpgandroid.data.model.Message
-import rpg.kotlin.com.esgikotlinrpgandroid.misc.Constant
 import rpg.kotlin.com.esgikotlinrpgandroid.misc.hideKeyboard
 import rpg.kotlin.com.esgikotlinrpgandroid.module.common.BaseActivity
 
@@ -29,7 +28,7 @@ class GameActivity : BaseActivity(layoutRes = R.layout.activity_game), GameInter
   }
 
   private fun initListener() {
-    game_button.setOnClickListener { presenter.onValidateEntryClick(game_profile_edt.text.toString()) }
+    game_validate_btn.setOnClickListener { presenter.onValidateEntryClick(game_profile_edt.text.toString()) }
   }
 
   private fun initAdapter() {

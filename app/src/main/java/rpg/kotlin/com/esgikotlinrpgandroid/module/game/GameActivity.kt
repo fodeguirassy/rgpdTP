@@ -75,28 +75,22 @@ class GameActivity : BaseActivity(layoutRes = R.layout.activity_game), GameInter
   }
 
   override fun displayStartQuestMessage() {
-
     displayMessage(Message(message = getString(R.string.come_for_quest)))
     displayYesOrNoChoice()
-
-   /* var comeToStartQuest = readLine()
-    var launchDungeon = false
-
-    while (!launchDungeon) when {
-      comeToStartQuest.equals(Constant.YES) -> {
-        println("Je savais que tu avais l'ame d'un guerrier, je l'ai vu dès que tu t'es présenté à moi !")
-        launchDungeon = true
-      }
-      comeToStartQuest.equals(Constant.NO) -> {
-        //todo complete refused start request
-      }
-      else -> {
-        println("Hum, Hum, ce n'est pas une bonne réponse")
-        comeToStartQuest = readLine()
-      }
-    }
-    presenter.wantToLaunchDungeon(launchDungeon)*/
   }
+
+  override fun displayStartQuestPositiveAnswer() {
+    displayMessage(Message(message = getString(R.string.start_quest_yes)))
+  }
+
+  override fun displayStartQuestNegativeAnswer() {
+    displayMessage(Message(message = getString(R.string.start_quest_no)))
+  }
+
+  override fun displayStartQuestBadAnswer() {
+    displayMessage(Message(message = getString(R.string.start_quest_bad_answer)))
+  }
+
 
   override fun displayDungeonInformation(dungeonName: String) {
   }

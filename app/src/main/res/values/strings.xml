@@ -14,5 +14,9 @@
     <string name="come_for_quest">Tu viens ici pour la quête ?</string>
     <string name="yes_or_no_choice">\'o\' --> Oui \n\'n\' --> Non</string>
 
+    <string name="start_quest_yes">Je savais que tu avais l\'ame d\'un guerrier, je l\'ai vu dès que tu t\'es présenté à moi !</string>
+    <string name="start_quest_no">Hum, tu es sûr ? la légende dit qu\'il y aurait une épée sacrée cachée dans ce Donjon...</string>
+    <string name="start_quest_bad_answer">Hum, Hum, ce n\'est pas une bonne réponse</string>
+
 
 </resources>

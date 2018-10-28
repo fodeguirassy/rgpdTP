@@ -4,7 +4,7 @@ package module
 //@Deprecated("for old school people :)")
 /*
 class GameConsole(private val presenter: GamePresenter) : GameInterface {
-  override fun displayPlayerPseudo(pseudo: String) {
+  override fun displayPlayerPseudoReaction(pseudo: String) {
 
   }
 
@@ -16,7 +16,7 @@ class GameConsole(private val presenter: GamePresenter) : GameInterface {
     println("Bienvenue à kotlinCity! \nQuel est ton nom voyageur?\n")
   }
 
-  override fun displayPlayerPseudo() {
+  override fun displayPlayerPseudoReaction() {
     print("Pseudo : ")
     val myPseudo: String = readLine() ?: "toto"
     print("En voilà un drôle de nom $myPseudo")

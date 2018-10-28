@@ -21,7 +21,6 @@ class GamePresenter(private val view: GameInterface) : BasePresenter() {
 
   private var leaveTheGame = false
   private var winTheGame = false
-  private var launchDungeon = false
 
 
   private lateinit var currentPlayerAnswer: String
@@ -37,15 +36,17 @@ class GamePresenter(private val view: GameInterface) : BasePresenter() {
     when (currentStoryLine) {
       StoryLine.WELCOME_TO_THE_GAME -> view.displayWelcomeMessage()
       StoryLine.PLAYER_PSEUDO -> {
-        view.displayPlayerPseudo(pseudo)
-        view.displayStartQuestMessage()
+        view.displayPlayerPseudoReaction(pseudo)
+        triggerStoryLineAction()
       }
-      StoryLine.START_QUEST -> {
-
-      }
+      StoryLine.START_QUEST -> view.displayStartQuestMessage()
       StoryLine.DUNGEON_INFORMATION -> {
+        view.displayDungeonInformation(dungeon.name)
+        triggerStoryLineAction()
       }
-      StoryLine.WEAPON -> {
+      StoryLine.CHOOSE_WEAPON -> {
+        view.displayNextCourse()
+        //view.choosePlayerWeaponInformation(Weapon.values())
       }
     }
   }
@@ -54,47 +55,41 @@ class GamePresenter(private val view: GameInterface) : BasePresenter() {
     when (currentStoryLine) {
       StoryLine.WELCOME_TO_THE_GAME -> {
         pseudo = currentPlayerAnswer
-        currentPlayerAnswer = ""
-        currentStoryLine = StoryLine.getNextStoryLinePoint(currentStoryLine)
+        clearTextField()
+        updateStoryLine()
       }
-      StoryLine.PLAYER_PSEUDO -> {
-        prepareStarQuest()
-      }
-      StoryLine.START_QUEST -> {
-      }
-      StoryLine.DUNGEON_INFORMATION -> {
-      }
-      StoryLine.WEAPON -> {
-      }
+      StoryLine.PLAYER_PSEUDO -> updateStoryLine()
+      StoryLine.START_QUEST -> prepareStarQuest()
+      StoryLine.DUNGEON_INFORMATION -> updateStoryLine()
+      StoryLine.CHOOSE_WEAPON -> {}
     }
+
     manageStoryLine()
   }
 
+  private fun clearTextField() {
+    currentPlayerAnswer = ""
+  }
+
+  private fun updateStoryLine() {
+    currentStoryLine = StoryLine.getNextStoryLinePoint(currentStoryLine)
+  }
+
   private fun prepareStarQuest() {
-    when (currentPlayerAnswer) {
-      Constant.YES -> {
+    when {
+      Constant.YES.contains(currentPlayerAnswer) -> {
         view.displayStartQuestPositiveAnswer()
-        currentStoryLine = StoryLine.getNextStoryLinePoint(currentStoryLine)
-        wantToLaunchDungeon()
+        prepareDungeon()
+        updateStoryLine()
       }
-      Constant.NO -> view.displayStartQuestNegativeAnswer()
+      Constant.NO.contains(currentPlayerAnswer) -> view.displayStartQuestNegativeAnswer()
       else -> view.displayStartQuestBadAnswer()
     }
-
   }
 
-  private fun wantToLaunchDungeon() {
-    this.launchDungeon = launchDungeon
-    if (launchDungeon) {
-      dungeon = DataProvider.initDungeon()
-      currentRoom = dungeon.rooms[RoomName.STARTING_ROOM]!!
-      view.displayDungeonInformation(dungeon.name)
-      choosePlayerWeapon()
-    }
-  }
-
-  private fun choosePlayerWeapon() {
-    view.choosePlayerWeaponInformation(Weapon.values())
+  private fun prepareDungeon() {
+    dungeon = DataProvider.initDungeon()
+    currentRoom = dungeon.rooms[RoomName.STARTING_ROOM]!!
   }
 
   fun playerChooseWeapon(weaponChoice: Int) {
@@ -227,12 +222,18 @@ class GamePresenter(private val view: GameInterface) : BasePresenter() {
     }
   }
 
+  fun onMapClick() {
+    // todo : Here you can start your tp :)
+
+
+  }
+
   enum class StoryLine {
     WELCOME_TO_THE_GAME,
     PLAYER_PSEUDO,
     START_QUEST,
     DUNGEON_INFORMATION,
-    WEAPON;
+    CHOOSE_WEAPON;
 
     companion object {
       fun getNextStoryLinePoint(point: StoryLine): StoryLine {

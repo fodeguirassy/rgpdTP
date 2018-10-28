@@ -2,10 +2,12 @@ package rpg.kotlin.com.esgikotlinrpgandroid.module.game
 
 import android.os.Handler
 import android.support.v7.widget.LinearLayoutManager
+import android.widget.Toast
 import data.model.Room
 import data.model.RoomName
 import data.model.Weapon
 import kotlinx.android.synthetic.main.activity_game.*
+import kotlinx.android.synthetic.main.merge_header_game_view.*
 import module.GameInterface
 import module.GamePresenter
 import rpg.kotlin.com.esgikotlinrpgandroid.R
@@ -28,7 +30,19 @@ class GameActivity : BaseActivity(layoutRes = R.layout.activity_game), GameInter
   }
 
   private fun initListener() {
+
+    game_recycler_view.addOnLayoutChangeListener { _, _, _, _, bottom, _, _, _, oldBottom ->
+      if (bottom < oldBottom) {
+        game_recycler_view.smoothScrollToPosition(adapter.itemCount)
+      }
+    }
+
     game_validate_btn.setOnClickListener { presenter.onValidateEntryClick(game_profile_edt.text.toString()) }
+
+    game_map_btn.setOnClickListener {
+      presenter.onMapClick()
+      Toast.makeText(this, "En construction! \nRome ne s'est pas faite en un jour!", Toast.LENGTH_SHORT).show()
+    }
   }
 
   private fun initAdapter() {
@@ -39,17 +53,23 @@ class GameActivity : BaseActivity(layoutRes = R.layout.activity_game), GameInter
   }
 
   private fun displayMessage(message: Message) {
-    Handler().postDelayed({ adapter.addMessage(message) }, 300)
+    Handler().postDelayed({
+      adapter.addMessage(message)
+      game_recycler_view.smoothScrollToPosition(adapter.itemCount)
+    }, 300)
   }
 
   override fun addPlayerMessage(playerMessage: Message) {
     hideKeyboard()
     displayMessage(playerMessage)
     game_profile_edt.text.clear()
-    game_recycler_view.scrollToPosition(adapter.itemCount - 1)
+    //game_recycler_view.scrollToPosition(adapter.itemCount - 1)
   }
 
   //region * * * Override function * * *
+  /**
+   * This method is just an example of how to transform step by step console code to android code
+   */
   override fun displayWelcomeMessage() {
     //before
     println("Salut à toi !")
@@ -62,20 +82,12 @@ class GameActivity : BaseActivity(layoutRes = R.layout.activity_game), GameInter
     displayMessage(Message(message = getString(R.string.welcome_message)))
   }
 
-  override fun displayPlayerPseudo(pseudo: String) {
-    //before
-    //print("Pseudo :")
-    //val myPseudo: String = readLine() ?: "toto"
-    //print("En voilà un drôle de nom $myPseudo")
-    //presenter.savePlayerPseudo(myPseudo)
-
-    //after
+  override fun displayPlayerPseudoReaction(pseudo: String) {
     displayMessage(Message(message = getString(R.string.funny_player_name, pseudo)))
   }
 
   override fun displayStartQuestMessage() {
     displayMessage(Message(message = getString(R.string.come_for_quest)))
-    displayYesOrNoChoice()
   }
 
   override fun displayStartQuestPositiveAnswer() {
@@ -90,8 +102,8 @@ class GameActivity : BaseActivity(layoutRes = R.layout.activity_game), GameInter
     displayMessage(Message(message = getString(R.string.start_quest_bad_answer)))
   }
 
-
   override fun displayDungeonInformation(dungeonName: String) {
+    displayMessage(Message(message = getString(R.string.first_foot_in_dungeon, dungeonName)))
   }
 
   override fun choosePlayerWeaponInformation(weapons: Array<Weapon>) {
@@ -151,8 +163,13 @@ class GameActivity : BaseActivity(layoutRes = R.layout.activity_game), GameInter
   override fun askPlayerWantFighting(typeName: String) {
   }
 
+  override fun displayNextCourse() {
+    Toast.makeText(this, "La suite au prochain cours soldat ! \nAiguise ton arme en attendant ;)", Toast.LENGTH_SHORT).show()
+  }
+  //endregion
+
+
   private fun displayYesOrNoChoice() {
     displayMessage(Message(message = getString(R.string.yes_or_no_choice)))
   }
-  //endregion
 }

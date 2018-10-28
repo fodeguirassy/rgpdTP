@@ -6,10 +6,13 @@ import data.model.Weapon
 import rpg.kotlin.com.esgikotlinrpgandroid.data.model.Message
 
 interface GameInterface {
+    //cours 3
     fun displayWelcomeMessage()
-    fun displayPlayerPseudo(pseudo: String)
+    fun displayPlayerPseudoReaction(pseudo: String)
     fun displayStartQuestMessage()
     fun displayDungeonInformation(dungeonName: String)
+
+    //cours 4
     fun choosePlayerWeaponInformation(weapons: Array<Weapon>)
     fun displayWeaponGameMasterMessage(weaponName: String)
     fun displayPlayerAreIn()
@@ -33,5 +36,8 @@ interface GameInterface {
     fun displayStartQuestPositiveAnswer()
     fun displayStartQuestNegativeAnswer()
     fun displayStartQuestBadAnswer()
+
+    //temporary
+    fun displayNextCourse()
     //fun displayHasLockDoorPlayerOption(player: Player)
 }

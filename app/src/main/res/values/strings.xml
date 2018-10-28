@@ -1,23 +1,23 @@
 <resources>
 
-    <string name="app_name">EsgiKotlinRpgAndroid</string>
+  <string name="app_name">EsgiKotlinRpgAndroid</string>
 
 
-    <string name="welcome_message">Salut à toi ! \nBienvenue à kotlinCity! \nQuel est ton nom voyageur?</string>
+  <string name="welcome_message">Salut à toi ! \nBienvenue à kotlinCity! \nQuel est ton nom voyageur?</string>
 
-    <string name="funny_name">En voilà un drôle de nom %s</string>
-    <string name="game_master">Game Master</string>
-    <string name="validate">Valider</string>
-    <string name="hint_edit_text_value">Ma réponse</string>
-    <string name="your_pseudo">Pseudo :</string>
-    <string name="funny_player_name">En voilà un drôle de nom %s</string>
-    <string name="come_for_quest">Tu viens ici pour la quête ?</string>
-    <string name="yes_or_no_choice">\'o\' --> Oui \n\'n\' --> Non</string>
-    <string name="player_life_point_hint">100pt</string>
+  <string name="funny_name">En voilà un drôle de nom %s</string>
+  <string name="game_master">Game Master</string>
+  <string name="validate">Valider</string>
+  <string name="hint_edit_text_value">Ma réponse</string>
+  <string name="your_pseudo">Pseudo :</string>
+  <string name="funny_player_name">En voilà un drôle de nom %s</string>
+  <string name="come_for_quest">Tu viens ici pour la quête ?</string>
+  <string name="yes_or_no_choice">\'o\' --> Oui \n\'n\' --> Non</string>
+  <string name="player_life_point">Environ 0</string>
 
-    <string name="start_quest_yes">Je savais que tu avais l\'ame d\'un guerrier, je l\'ai vu dès que tu t\'es présenté à moi !</string>
-    <string name="start_quest_no">Hum, tu es sûr ? la légende dit qu\'il y aurait une épée sacrée cachée dans ce Donjon...</string>
-    <string name="start_quest_bad_answer">Hum, Hum, ce n\'est pas une bonne réponse</string>
+  <string name="start_quest_yes">Je savais que tu avais l\'ame d\'un guerrier, je l\'ai vu dès que tu t\'es présenté à moi !</string>
+  <string name="start_quest_no">Hum, tu es sûr ? la légende dit qu\'il y aurait une épée sacrée cachée dans ce Donjon...</string>
+  <string name="start_quest_bad_answer">Hum, Hum, ce n\'est pas une bonne réponse</string>
 
-
+  <string name="first_foot_in_dungeon">"Vous venez de pénétrer dans le donjon de %s ! \nN'hésite pas à jeter un oeil à la carte !</string>
 </resources>

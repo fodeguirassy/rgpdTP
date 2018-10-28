@@ -5,7 +5,8 @@ package rpg.kotlin.com.esgikotlinrpgandroid.misc
  *
  */
 object Constant {
-    const val YES = "o"
-    const val NO = "n"
-    const val QUIT = "q"
+
+  val YES = listOf("o", "y", "oui", "yes", "yep", "ok", "yeah", "ye")
+  val NO = listOf("n", "no", "non", "nope", "nan")
+  const val QUIT = "q"
 }

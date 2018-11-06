@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.support.annotation.LayoutRes
 import android.support.v7.app.AppCompatActivity
 
-abstract class BaseActivity constructor(@LayoutRes val layoutRes: Int) : AppCompatActivity() {
+abstract class BaseActivity(@LayoutRes val layoutRes: Int) : AppCompatActivity() {
 
   protected abstract fun getPresenter(): BasePresenter
 

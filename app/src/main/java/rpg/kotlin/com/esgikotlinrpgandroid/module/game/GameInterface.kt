@@ -37,6 +37,11 @@ interface GameInterface {
     fun displayStartQuestNegativeAnswer()
     fun displayStartQuestBadAnswer()
 
+    //
+    fun clearMessages()
+    fun notifyDungeonNotReady()
+    fun displayMessage(message: Message)
+
     //temporary
     fun displayNextCourse()
     //fun displayHasLockDoorPlayerOption(player: Player)

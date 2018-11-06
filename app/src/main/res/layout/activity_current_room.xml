@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".module.game.room.current.CurrentRoomActivity">
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/current_room_locked_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:tint="@color/green"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_locked" />
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/current_room_monster_img"
+        android:layout_width="290dp"
+        android:layout_height="290dp"
+        android:padding="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/current_room_locked_img"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_nothing"
+        android:background="@drawable/background_bordered"
+        />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/current_room_north_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableBottom="@drawable/ic_doorway"
+        android:text="@string/room_north_title"
+        app:layout_constraintCircle="@id/current_room_monster_img"
+        app:layout_constraintCircleAngle="0"
+        app:layout_constraintCircleRadius="172dp"
+        style="@style/AppTheme.TextWithDrawable"/>
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/current_room_east_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="6dp"
+        android:drawableEnd="@drawable/ic_doorway"
+        android:gravity="center_horizontal"
+        android:text="@string/room_east_title"
+        app:layout_constraintCircle="@id/current_room_monster_img"
+        app:layout_constraintCircleAngle="270"
+        app:layout_constraintCircleRadius="154dp"
+        style="@style/AppTheme.TextWithDrawable"
+        />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/current_room_west_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_doorway"
+        android:text="@string/room_west_title"
+        android:textColor="@android:color/black"
+        app:layout_constraintCircle="@id/current_room_monster_img"
+        app:layout_constraintCircleAngle="90"
+        app:layout_constraintCircleRadius="158dp"
+        style="@style/AppTheme.TextWithDrawable"
+        />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/current_room_south_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableTop="@drawable/ic_doorway"
+        android:text="@string/room_south_title"
+        android:textColor="@android:color/black"
+        app:layout_constraintCircle="@id/current_room_monster_img"
+        app:layout_constraintCircleAngle="180"
+        app:layout_constraintCircleRadius="160dp"
+        style="@style/AppTheme.TextWithDrawable"/>
+
+  <android.support.v7.widget.AppCompatImageView
+      android:layout_width="50dp"
+      android:layout_height="50dp"
+      app:layout_constraintTop_toBottomOf="@id/current_room_monster_img"
+      app:layout_constraintStart_toStartOf="@id/current_room_locked_img"
+      app:srcCompat="@drawable/ic_compass"
+      app:layout_constraintBottom_toBottomOf="parent"
+      android:layout_marginStart="22dp"
+      android:id="@+id/current_room_compass_img"
+      />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/room_north_title"
+        app:layout_constraintCircle="@id/current_room_compass_img"
+        app:layout_constraintCircleRadius="40dp"
+        app:layout_constraintCircleAngle="0"
+        android:textSize="16dp"
+        />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/room_west_title"
+        app:layout_constraintCircle="@id/current_room_compass_img"
+        app:layout_constraintCircleRadius="40dp"
+        app:layout_constraintCircleAngle="90"
+        android:textSize="16dp"
+        />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/room_east_title"
+        app:layout_constraintCircle="@id/current_room_compass_img"
+        app:layout_constraintCircleRadius="38dp"
+        app:layout_constraintCircleAngle="270"
+        android:textSize="16dp"
+        />
+
+
+    <android.support.v7.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/room_south_title"
+        app:layout_constraintCircle="@id/current_room_compass_img"
+        app:layout_constraintCircleRadius="38dp"
+        app:layout_constraintCircleAngle="175"
+        android:textSize="16dp"
+        />
+
+
+</android.support.constraint.ConstraintLayout>

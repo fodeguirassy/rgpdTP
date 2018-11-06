@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".module.game.GameActivity">
+    tools:context=".module.game.GameActivity"
+    android:id="@+id/activity_game_layout">
 
   <include layout="@layout/merge_header_game_view" />
 

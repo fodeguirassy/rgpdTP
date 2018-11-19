@@ -2,9 +2,6 @@ package rpg.kotlin.com.esgikotlinrpgandroid.module.game.room.current
 
 import android.support.v4.app.NavUtils
 import data.DataProvider
-import data.model.Room
-import data.model.RoomName
-import rpg.kotlin.com.esgikotlinrpgandroid.R
 import rpg.kotlin.com.esgikotlinrpgandroid.misc.Constant
 import rpg.kotlin.com.esgikotlinrpgandroid.module.common.BasePresenter
 

@@ -1,6 +1,12 @@
 package data
 
-import data.model.*
+import data.model.Dungeon
+import data.model.Item
+import data.model.ItemType
+import data.model.Monster
+import data.model.MonsterType
+import data.model.Room
+import data.model.RoomName
 
 object DataProvider {
 

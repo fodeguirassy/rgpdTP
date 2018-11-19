@@ -19,3 +19,4 @@ enum class RoomName(val roomName: String) {
     ROOM_4("Room 4"),
     ENDING_ROOM("Ending room")
 }
+

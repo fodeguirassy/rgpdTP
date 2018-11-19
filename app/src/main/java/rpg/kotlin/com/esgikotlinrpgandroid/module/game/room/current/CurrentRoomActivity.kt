@@ -2,10 +2,6 @@ package rpg.kotlin.com.esgikotlinrpgandroid.module.game.room.current
 
 import android.support.v4.content.ContextCompat
 import android.view.MenuItem
-import data.model.Item
-import data.model.ItemType
-import data.model.Monster
-import data.model.MonsterType
 import data.model.Room
 import kotlinx.android.synthetic.main.activity_current_room.current_room_east_tv
 import kotlinx.android.synthetic.main.activity_current_room.current_room_locked_img
